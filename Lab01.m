@@ -1,5 +1,7 @@
 clc; clear;
 
+plotSpacing = 2;
+
 % Create labels for subplots
 labels = [ ...
 "1000 Hz 30 sec. ACC working direction",...
@@ -7,6 +9,8 @@ labels = [ ...
 "10 Hz 30 sec. ACC working direction",  ...
 "1000 Hz 60 sec. Stepping Up and Down", ...
 "100 Hz 60 sec. Stepping Up and Down",  ...
+"1000 Hz 30 sec. Stepping Jeans Up and Down", ...
+"100 Hz 30 sec. Stepping Jeans Up and Down",  ...
 "1000 Hz 60 sec. Walking",              ...
 "100 Hz 60 sec. Walking",               ...
 "1000 Hz 60 sec. Walking Jeans",        ...
@@ -44,7 +48,7 @@ for k = 1:numOfFiles
    rawData(k).acc = dataSet(k).data(:,6).';
     
    % Plot rawData vs time in separate subplots
-   subplot(numOfFiles,1,k)
+   subplot(numOfFiles,plotSpacing,k)
    plot(dataSet(k).t,rawData(k).acc)
    
    title(labels(1,k))
@@ -88,11 +92,11 @@ for k = 1:numOfFiles
     X = abs(Y.*Z);
     freq = linspace(0,Fs,length(X));
      
-   subplot(numOfFiles,1,k)
+   subplot(numOfFiles,plotSpacing,k)
    plot(dataSet(k).t,ACCg)
    
    title(labels(1,k))
-   xlabel('Time in sec'); ylabel('g, being 9.8 m/s^2');
+   xlabel('Time in sec'); ylabel('g, (9.8 m/s^2)');
    ylim([-3 3])
    
    grid on;
@@ -119,17 +123,49 @@ for k = 1:numOfFiles
     X = abs(Y.*Z);
     freq = linspace(0,Fs,length(X));
     
-    subplot(numOfFiles,1,k)
-    plot(freq, 10*log10(X));
+    subplot(numOfFiles,plotSpacing,k)
+    plot(freq, X);
     
     title(labels(1,k))
-    xlabel('Hz'); ylabel('Power Spectra in dB');
+    xlabel('Hz'); ylabel('Power Spectra');
     xlim([0 1])
+    ylim([0 800])
 
    grid on;
-   ax = gca
+   ax = gca;
    ax.XRuler.MinorTick = 'on';
     
 end
 
    sgtitle('Power Spectra vs Freq.')
+
+   
+%% Using pspectrum function to check manually calculated results.
+% 
+% Only referenced in report for comparison. Not really used elsewhere,
+% since I couldn't understand the results as well as I would've liked.
+   figure(4)
+
+for k = 1:numOfFiles
+
+    Fs = dataSet(k).header.samplingrate;
+    L = length(dataSet(k).data);
+
+    Y = fft(rawData(k).acc)/L;
+    Z = conj(Y);
+    X = abs(Y.*Z);
+    freq = linspace(0,Fs,length(X));
+    
+    subplot(numOfFiles,plotSpacing,k)
+    pspectrum(rawData(k).acc, Fs);
+    xlabel('Hz'); ylabel('dB');
+    title(labels(1,k))
+    xlim([0 3])
+
+   grid on;
+   ax = gca;
+   ax.XRuler.MinorTick = 'on';
+    
+end
+
+   sgtitle('Power Spectra vs Freq. using pspectrum func.')
