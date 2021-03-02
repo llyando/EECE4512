@@ -1,0 +1,1 @@
+Much smaller signal response from Eye sensor than from Jaw sensor. Smaller muscles so makes sense. Or could be incorrect placement of Eye sensor

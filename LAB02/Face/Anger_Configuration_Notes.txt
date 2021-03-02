@@ -1,0 +1,3 @@
+Same issues as eye sensor from Smile. There is some signal component from the eye portion, but it his hidden by the readings from cheak
+
+Much smaller signal response from Eye sensor than from Cheak sensor. Smaller muscles so makes sense. Or could be incorrect placement of Eye sensor
