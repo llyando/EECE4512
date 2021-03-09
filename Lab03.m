@@ -31,20 +31,55 @@ ppg_data = data;
 Fs = sampl_rate;
 L = length(ppg_data);
 freq = linspace(0,Fs,length(ppg_data));
-time = length(ppg_data)/Fs;
+time = linspace(0,length(ppg_data)/Fs,length(ppg_data));
 
 rawTrend = detrend(ppg_data);
 Y = fft(rawTrend);
 Z = conj(Y);
 X = abs(Y.*Z)/L;
 
+chosenSec = 4900;
+
 figure
-plot(time, ppg_data);
-xlabel('Time in sec.'); ylabel('Power Spectra');
-xlim([0 1])
+plot(time(chosenSec:chosenSec+1000), ppg_data(chosenSec:chosenSec+1000));
+xlabel('Time in sec.'); ylabel('PPG Units');
+title('01 sec. of PPG data: 4.9 to 5.0')
 
 grid on;
 ax = gca;
 ax.XRuler.MinorTick = 'on';
 
-sgtitle('Power Spectra vs Freq.')
+%% Apply butterworth filter to data with the following:
+
+n = [5, 2, 1]; %Order of filter
+fc = [1, 2, 5, 20]; % Cutoff frequency
+
+for k = 1:length(n)
+    for g = 1:length(fc)
+        [b,a] = butter(n(k),fc(g)/(Fs/2));
+        figure
+        plot(filter(b,a,ppg_data(chosenSec:chosenSec+1000)));
+        title(['n = ',num2str(n(k)),', fc = ',num2str(fc(g))])
+        hold on
+        plot(ppg_data(chosenSec:chosenSec+1000))
+        legend(['n = ',num2str(n(k)),', fc = ',num2str(fc(g))],'Original PPG')
+        hold off
+        
+    end
+end
+
+%% Using n of 2 and fc of 20
+% n of 2 and fc of 5 might be good to check for breathing rate
+
+% n = 2;
+% fc = 20;
+% 
+% [b,a] = butter(n,fc/(Fs/2));
+% figure
+% plot(filter(b,a,ppg_data));
+% title(['n = ',num2str(n),', fc = ',num2str(fc)])
+% hold on
+% plot(ppg_data)
+% legend(['n = ',num2str(n),', fc = ',num2str(fc)],'Original PPG')
+% hold off
+
