@@ -1,17 +1,17 @@
-clc; clear;
+clc; clear; close all;
 
-plotSpacing = 2;
+plotSpacing = 1;
 
 % Create labels for subplots
 labels = [ ...
 "1000 Hz 30 sec. Bicep Flex",...
 "1000 Hz 30 sec. Bicep Heavy", ...
 "1000 Hz 30 sec. Bicep Resting",  ...
-"1000 Hz 30 sec. Face Anger", ...
-"1000 Hz 30 sec. Face Smile",  ...
 "1000 Hz 30 sec. Tricep Flex", ...
 "1000 Hz 30 sec. Tricep Heavy",  ...
-"1000 Hz 30 sec. Tricep Resting"
+"1000 Hz 30 sec. Tricep Resting", ...
+"1000 Hz 30 sec. Face Anger", ...
+"1000 Hz 30 sec. Face Smile"
 ];
 
 % Data source folder
@@ -36,20 +36,20 @@ for k = 1:numOfFiles
         BITalinoFileReader(path(k));
 end
 
-% Extract raw data of sensor
-%
+% Plot BICEP DATA
+figure
 
-figure(1)
-
-for k = 1:numOfFiles
-   rawData(k).acc = dataSet(k).data(:,6).';
+for k = 1:3
+   rawData(k).acc = dataSet(k).data(:,6);
     
    % Plot rawData vs time in separate subplots
-   subplot(numOfFiles,plotSpacing,k)
-   plot(dataSet(k).t,rawData(k).acc)
+   subplot(3,plotSpacing,k)
+   
+   rawTrend = detrend(rawData(k).acc);
+   plot(dataSet(k).t,rawTrend)
    
    title(labels(1,k))
-   xlabel('Time in sec'); ylabel('Raw Sensor');
+   xlabel('Time in sec'); ylabel('Raw Sensor Units');
    grid on;
    ax = gca;
    ax.XRuler.MinorTick = 'on';
@@ -58,28 +58,76 @@ end
 
 sgtitle('Raw Data vs Time');
 
-% Testing power spectra calculation.
+% Plot TRICEP DATA
+figure
+
+for k = 4:6
+   rawData(k).acc = dataSet(k).data(:,6);
+    
+   % Plot rawData vs time in separate subplots
+   subplot(3,plotSpacing,k-3)
+   
+   rawTrend = detrend(rawData(k).acc);
+   plot(dataSet(k).t,rawTrend)
+   
+   title(labels(1,k))
+   xlabel('Time in sec'); ylabel('Raw Sensor Units');
+   grid on;
+   ax = gca;
+   ax.XRuler.MinorTick = 'on';
+    
+end
+
+sgtitle('Raw Data vs Time');
+
+% Plot TRICEP DATA
+figure
+
+for k = 7:8
+   rawData(k).acc = dataSet(k).data(:,6);
+    
+   % Plot rawData vs time in separate subplots
+   subplot(2,plotSpacing,k-6)
+   
+   rawTrend = detrend(rawData(k).acc);
+   plot(dataSet(k).t,rawTrend)
+   
+   title(labels(1,k))
+   xlabel('Time in sec'); ylabel('Raw Sensor Units');
+   grid on;
+   ax = gca;
+   ax.XRuler.MinorTick = 'on';
+    
+end
+
+sgtitle('Raw Data vs Time');
+
+% Plot Power Spectra of all plots
 %
 
-figure(2)
+% Changing plotspacing so make 8 plots show up better
+plotSpacing = 2;
+
+figure
 
 for k = 1:numOfFiles
 
+    rawData(k).acc = dataSet(k).data(:,6).';
     Fs = dataSet(k).header.samplingrate;
     L = length(dataSet(k).data);
-    
-    Y = fft(rawData(k).acc);
+    rawTrend = detrend(rawData(k).acc);
+    Y = fft(rawTrend);
     Z = conj(Y);
     X = abs(Y.*Z)/L;
     freq = linspace(0,Fs,length(X));
     
     subplot(numOfFiles,plotSpacing,k)
+    
     plot(freq, X);
     
     title(labels(1,k))
     xlabel('Hz'); ylabel('Power Spectra');
-    xlim([0 1])
-    ylim([0 800])
+    xlim([0 1.5])
 
    grid on;
    ax = gca;
@@ -109,7 +157,6 @@ for k = 1:numOfFiles
     subplot(numOfFiles,plotSpacing,k)
     pspectrum(rawData(k).acc, Fs);
     xlabel('Hz'); ylabel('dB');
-    title(labels(1,k))
     xlim([0 3])
 
    grid on;
