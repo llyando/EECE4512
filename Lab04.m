@@ -2,8 +2,6 @@
 
 clc; clear; close all;
 
-plotSpacing = 2;
-
 % Create labels for plots
 labels = [ ...
 "Chest Lying Down",...
@@ -38,12 +36,72 @@ for k = 1:numOfFiles
         BITalinoFileReader(path(k));
 end
 
+%% Experiment 01: Plot Raw Data vs Time
+close all;
 
-%% Plot Raw Data vs Time
+k = 1;
+
+rawData(k).ecg = detrend(dataSet(k).data(:,6));
+
+% Plot rawData vs time in separate subplots
+figure(k)
+plot(dataSet(k).t,rawData(k).ecg)
+
+title(labels(1,k))
+xlabel('Time in sec'); ylabel('Raw Sensor');
+grid on;
+ax = gca;
+ax.XRuler.MinorTick = 'on';
+
+% Finding the local maxima with a rough MinProminence estimate.
+% Just eyeballed it until it looked decent
+ismax = islocalmax(rawData(k).ecg,'MinProminence',35);
+maxIndices = find(ismax);
+msPerBeat = mean(diff(maxIndices));
+heartRate = 60*(100/msPerBeat);
+
+formatSpec = '\n%s Heart Rate: %2.0f ';
+fprintf(formatSpec,labels(1,k),heartRate);
+
+
+k = 5;
+
+rawData(k).ecg = detrend(dataSet(k).data(:,6));
+
+% Plot rawData vs time in separate subplots
+figure(k)
+plot(dataSet(k).t,rawData(k).ecg)
+
+title(labels(1,k))
+xlabel('Time in sec'); ylabel('Raw Sensor');
+grid on;
+ax = gca;
+ax.XRuler.MinorTick = 'on';
+
+% Finding the local maxima with a rough MinProminence estimate.
+% Just eyeballed it until it looked decent
+ismax = islocalmax(rawData(k).ecg,'MinProminence',65);
+maxIndices = find(ismax);
+msPerBeat = mean(diff(maxIndices));
+heartRate = 60*(100/msPerBeat);
+
+formatSpec = '\n%s Heart Rate: %2.0f \n';
+fprintf(formatSpec,labels(1,k),heartRate);
+
+%% 01 Questions and Answers
+% Was there variability between the beats? Would you expect the interval 
+% between beats to be identical? Why or why not?
+
+% There was variability between the beats. This makes sense as the distance from
+% the heart was different. I would expect the variability between beats to be
+% extremely close however. Assuming a healthy blood vessel system, then I
+% couldn't imagine any issues with the
+
+%% Experiment 02: Plot Raw Data vs Time
 close all;
 
 for k = 1:numOfFiles
-   rawData(k).ecg = dataSet(k).data(:,6).';
+   rawData(k).ecg = detrend(dataSet(k).data(:,6));
     
    % Plot rawData vs time in separate subplots
    figure(k)
@@ -57,48 +115,62 @@ for k = 1:numOfFiles
     
 end
 
-
-%% Plot LowPass Filtered Data vs Time
+%% Experiment 02: Plot LowPass Filtered Data vs Time
 close all;
 
-cutOffFreq = 2;
+cutOffFreq = 3;
 
 for k = 1:numOfFiles
-   rawData(k).ecg = dataSet(k).data(:,6).';
+   rawData(k).ecg = detrend(dataSet(k).data(:,6));
      
    Fs = dataSet(k).header.samplingrate;
    filterLowPass = lowpass(rawData(k).ecg,cutOffFreq,Fs,'Steepness',0.95);
    
    figure(k)
-   plot(dataSet(k).t,filterLowPass)
+   hold on
+   plot(dataSet(k).t,rawData(k).ecg)
+   plot(dataSet(k).t,filterLowPass, 'r' )
+   hold off
    
    title(labels(1,k))
    xlabel('Time in sec'); ylabel('LowPass Filter');
+   legend('Raw Data', 'LowPass Filtered Data')
    grid on;
    ax = gca;
    ax.XRuler.MinorTick = 'on';
     
 end
 
-%% Plot LowPass Filtered Data vs Time
-close all;
+%% 02 Questions and Answers
+% What physiological advantage is there in a slower resting heart rate?
 
-bandWindow = [1 5];
+% A slower resting heart rate means your heart is more efficient at pumping
+% oxengentated blood around your body. Since it is stronger, it pumps less
+% often, causing less wear on the heart over the lifetime of the person. Also it
+% likely means that the heart can recover from high periods of activity faster,
+% returning to a lower rate and easing the workload much faster than a not as
+% healthy heart.
 
-for k = 1:numOfFiles
-   rawData(k).ecg = dataSet(k).data(:,6).';
-     
-   Fs = dataSet(k).header.samplingrate;
-   filterBandPass = bandpass(rawData(k).ecg,bandWindow,Fs);
-   
-   figure(k)
-   bandpass(rawData(k).ecg,bandWindow,Fs);
-   %plot(dataSet(k).t,filterBandPass)
-   
-   title(labels(1,k))
-   xlabel('Time in sec'); ylabel('BandPass Filter');
-   grid on;
-   ax = gca;
-   ax.XRuler.MinorTick = 'on';
-    
-end
+
+%% Plot BandPass Filtered Data vs Time (Just for reference)
+% close all;
+% 
+% bandWindow = [1 5];
+% 
+% for k = 1:numOfFiles
+%    rawData(k).ecg = detrend(dataSet(k).data(:,6));
+%      
+%    Fs = dataSet(k).header.samplingrate;
+%    filterBandPass = bandpass(rawData(k).ecg,bandWindow,Fs);
+%    
+%    figure(k)
+%    bandpass(rawData(k).ecg(1:10000),bandWindow,Fs);
+%    %plot(dataSet(k).t,filterBandPass)
+%    
+%    title(labels(1,k))
+%    xlabel('Time in sec'); ylabel('BandPass Filter');
+%    grid on;
+%    ax = gca;
+%    ax.XRuler.MinorTick = 'on';
+%     
+% end
