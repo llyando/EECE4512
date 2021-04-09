@@ -1,0 +1,479 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.9)  9 APR 2021 14:01
+entering extended mode
+**./Lab04.tex
+(Lab04.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(D:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(D:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+
+(D:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(D:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count187
+\l__pdf_internal_box=\box47
+)
+(Lab04.aux)
+\openout1 = `Lab04.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+ (D:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count188
+\scratchdimen=\dimen141
+\scratchbox=\box48
+\nofMPsegments=\count189
+\nofMParguments=\count190
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count191
+\MPscratchDim=\dimen142
+\MPnumerator=\count192
+\makeMPintoPDFobject=\count193
+\everyMPtoPDFconversion=\toks17
+) (D:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\Program Files\MiKTeX 2.9\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package epstopdf Info: Source file: <Lab04_01.eps>
+(epstopdf)                    date: 2021-04-09 13:35:49
+(epstopdf)                    size: 130182 bytes
+(epstopdf)             Output file: <Lab04_01-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:18
+(epstopdf)                    size: 45655 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_01-eps-convert
+ed-to.pdf Lab04_01.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_01-eps-converted-to.pdf, id=1, 370.38374pt x 302.12875pt>
+File: Lab04_01-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_01-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_01-eps-converted-to.pdf  used on input line 44.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_02.eps>
+(epstopdf)                    date: 2021-04-09 13:35:49
+(epstopdf)                    size: 135223 bytes
+(epstopdf)             Output file: <Lab04_02-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:18
+(epstopdf)                    size: 45683 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_02-eps-convert
+ed-to.pdf Lab04_02.eps>
+(epstopdf)             \includegraphics on input line 54.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_02-eps-converted-to.pdf, id=2, 370.38374pt x 301.125pt>
+File: Lab04_02-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_02-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_02-eps-converted-to.pdf  used on input line 54.
+(pdftex.def)             Requested size: 289.07999pt x 235.02817pt.
+ [1
+
+{C:/Users/hardy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Lab04_01-
+eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Lab04_03.eps>
+(epstopdf)                    date: 2021-04-09 13:35:49
+(epstopdf)                    size: 130182 bytes
+(epstopdf)             Output file: <Lab04_03-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:19
+(epstopdf)                    size: 45655 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_03-eps-convert
+ed-to.pdf Lab04_03.eps>
+(epstopdf)             \includegraphics on input line 80.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_03-eps-converted-to.pdf, id=19, 370.38374pt x 302.12875pt>
+File: Lab04_03-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_03-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_03-eps-converted-to.pdf  used on input line 80.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_04.eps>
+(epstopdf)                    date: 2021-04-09 13:35:50
+(epstopdf)                    size: 121540 bytes
+(epstopdf)             Output file: <Lab04_04-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:20
+(epstopdf)                    size: 40070 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_04-eps-convert
+ed-to.pdf Lab04_04.eps>
+(epstopdf)             \includegraphics on input line 83.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_04-eps-converted-to.pdf, id=20, 370.38374pt x 302.12875pt>
+File: Lab04_04-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_04-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_04-eps-converted-to.pdf  used on input line 83.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_05.eps>
+(epstopdf)                    date: 2021-04-09 13:35:50
+(epstopdf)                    size: 120005 bytes
+(epstopdf)             Output file: <Lab04_05-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:21
+(epstopdf)                    size: 40586 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_05-eps-convert
+ed-to.pdf Lab04_05.eps>
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_05-eps-converted-to.pdf, id=21, 370.38374pt x 302.12875pt>
+File: Lab04_05-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_05-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_05-eps-converted-to.pdf  used on input line 85.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_06.eps>
+(epstopdf)                    date: 2021-04-09 13:35:51
+(epstopdf)                    size: 117503 bytes
+(epstopdf)             Output file: <Lab04_06-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:22
+(epstopdf)                    size: 40461 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_06-eps-convert
+ed-to.pdf Lab04_06.eps>
+(epstopdf)             \includegraphics on input line 87.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_06-eps-converted-to.pdf, id=22, 370.38374pt x 302.12875pt>
+File: Lab04_06-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_06-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_06-eps-converted-to.pdf  used on input line 87.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_07.eps>
+(epstopdf)                    date: 2021-04-09 13:35:51
+(epstopdf)                    size: 135223 bytes
+(epstopdf)             Output file: <Lab04_07-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:23
+(epstopdf)                    size: 45683 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_07-eps-convert
+ed-to.pdf Lab04_07.eps>
+(epstopdf)             \includegraphics on input line 89.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_07-eps-converted-to.pdf, id=23, 370.38374pt x 301.125pt>
+File: Lab04_07-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_07-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_07-eps-converted-to.pdf  used on input line 89.
+(pdftex.def)             Requested size: 289.07999pt x 235.02817pt.
+Package epstopdf Info: Source file: <Lab04_08.eps>
+(epstopdf)                    date: 2021-04-09 13:35:52
+(epstopdf)                    size: 129138 bytes
+(epstopdf)             Output file: <Lab04_08-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:24
+(epstopdf)                    size: 46091 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_08-eps-convert
+ed-to.pdf Lab04_08.eps>
+(epstopdf)             \includegraphics on input line 91.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_08-eps-converted-to.pdf, id=24, 370.38374pt x 301.125pt>
+File: Lab04_08-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_08-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_08-eps-converted-to.pdf  used on input line 91.
+(pdftex.def)             Requested size: 289.07999pt x 235.02817pt.
+Package epstopdf Info: Source file: <Lab04_09.eps>
+(epstopdf)                    date: 2021-04-09 13:35:52
+(epstopdf)                    size: 139913 bytes
+(epstopdf)             Output file: <Lab04_09-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:24
+(epstopdf)                    size: 48727 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_09-eps-convert
+ed-to.pdf Lab04_09.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_09-eps-converted-to.pdf, id=25, 373.395pt x 302.12875pt>
+File: Lab04_09-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_09-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_09-eps-converted-to.pdf  used on input line 93.
+(pdftex.def)             Requested size: 289.07999pt x 233.91685pt.
+Package epstopdf Info: Source file: <Lab04_10.eps>
+(epstopdf)                    date: 2021-04-09 13:35:52
+(epstopdf)                    size: 127059 bytes
+(epstopdf)             Output file: <Lab04_10-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:25
+(epstopdf)                    size: 45053 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_10-eps-convert
+ed-to.pdf Lab04_10.eps>
+(epstopdf)             \includegraphics on input line 95.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_10-eps-converted-to.pdf, id=26, 370.38374pt x 302.12875pt>
+File: Lab04_10-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_10-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_10-eps-converted-to.pdf  used on input line 95.
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+[]
+ []
+
+[2 <./Lab04_02-eps-converted-to.pdf>] [3 <./Lab04_03-eps-converted-to.pdf> <./L
+ab04_04-eps-converted-to.pdf>] [4 <./Lab04_05-eps-converted-to.pdf> <./Lab04_06
+-eps-converted-to.pdf>] [5 <./Lab04_07-eps-converted-to.pdf> <./Lab04_08-eps-co
+nverted-to.pdf>]
+Package epstopdf Info: Source file: <Lab04_11.eps>
+(epstopdf)                    date: 2021-04-09 13:35:53
+(epstopdf)                    size: 202526 bytes
+(epstopdf)             Output file: <Lab04_11-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:26
+(epstopdf)                    size: 72715 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_11-eps-convert
+ed-to.pdf Lab04_11.eps>
+(epstopdf)             \includegraphics on input line 101.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_11-eps-converted-to.pdf, id=95, 370.38374pt x 302.12875pt>
+File: Lab04_11-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_11-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_11-eps-converted-to.pdf  used on input line 101.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_12.eps>
+(epstopdf)                    date: 2021-04-09 13:35:54
+(epstopdf)                    size: 192100 bytes
+(epstopdf)             Output file: <Lab04_12-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:27
+(epstopdf)                    size: 66562 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_12-eps-convert
+ed-to.pdf Lab04_12.eps>
+(epstopdf)             \includegraphics on input line 103.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_12-eps-converted-to.pdf, id=96, 370.38374pt x 302.12875pt>
+File: Lab04_12-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_12-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_12-eps-converted-to.pdf  used on input line 103.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_13.eps>
+(epstopdf)                    date: 2021-04-09 13:35:54
+(epstopdf)                    size: 194043 bytes
+(epstopdf)             Output file: <Lab04_13-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:28
+(epstopdf)                    size: 68732 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_13-eps-convert
+ed-to.pdf Lab04_13.eps>
+(epstopdf)             \includegraphics on input line 105.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_13-eps-converted-to.pdf, id=97, 370.38374pt x 302.12875pt>
+File: Lab04_13-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_13-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_13-eps-converted-to.pdf  used on input line 105.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_14.eps>
+(epstopdf)                    date: 2021-04-09 13:35:55
+(epstopdf)                    size: 182997 bytes
+(epstopdf)             Output file: <Lab04_14-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:29
+(epstopdf)                    size: 65647 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_14-eps-convert
+ed-to.pdf Lab04_14.eps>
+(epstopdf)             \includegraphics on input line 107.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_14-eps-converted-to.pdf, id=98, 370.38374pt x 302.12875pt>
+File: Lab04_14-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_14-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_14-eps-converted-to.pdf  used on input line 107.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+Package epstopdf Info: Source file: <Lab04_15.eps>
+(epstopdf)                    date: 2021-04-09 13:35:56
+(epstopdf)                    size: 215032 bytes
+(epstopdf)             Output file: <Lab04_15-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:30
+(epstopdf)                    size: 74642 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_15-eps-convert
+ed-to.pdf Lab04_15.eps>
+(epstopdf)             \includegraphics on input line 109.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_15-eps-converted-to.pdf, id=99, 370.38374pt x 301.125pt>
+File: Lab04_15-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_15-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_15-eps-converted-to.pdf  used on input line 109.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.02817pt.
+Package epstopdf Info: Source file: <Lab04_16.eps>
+(epstopdf)                    date: 2021-04-09 13:35:56
+(epstopdf)                    size: 205790 bytes
+(epstopdf)             Output file: <Lab04_16-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:31
+(epstopdf)                    size: 74907 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_16-eps-convert
+ed-to.pdf Lab04_16.eps>
+(epstopdf)             \includegraphics on input line 111.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_16-eps-converted-to.pdf, id=100, 370.38374pt x 301.125pt>
+File: Lab04_16-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_16-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_16-eps-converted-to.pdf  used on input line 111.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.02817pt.
+Package epstopdf Info: Source file: <Lab04_17.eps>
+(epstopdf)                    date: 2021-04-09 13:35:57
+(epstopdf)                    size: 225795 bytes
+(epstopdf)             Output file: <Lab04_17-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:32
+(epstopdf)                    size: 80655 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_17-eps-convert
+ed-to.pdf Lab04_17.eps>
+(epstopdf)             \includegraphics on input line 113.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_17-eps-converted-to.pdf, id=101, 373.395pt x 302.12875pt>
+File: Lab04_17-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_17-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_17-eps-converted-to.pdf  used on input line 113.
+
+(pdftex.def)             Requested size: 289.07999pt x 233.91685pt.
+Package epstopdf Info: Source file: <Lab04_18.eps>
+(epstopdf)                    date: 2021-04-09 13:35:58
+(epstopdf)                    size: 205249 bytes
+(epstopdf)             Output file: <Lab04_18-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-09 13:36:33
+(epstopdf)                    size: 74503 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Lab04_18-eps-convert
+ed-to.pdf Lab04_18.eps>
+(epstopdf)             \includegraphics on input line 115.
+Package epstopdf Info: Output file is already uptodate.
+<Lab04_18-eps-converted-to.pdf, id=102, 370.38374pt x 302.12875pt>
+File: Lab04_18-eps-converted-to.pdf Graphic file (type pdf)
+<use Lab04_18-eps-converted-to.pdf>
+Package pdftex.def Info: Lab04_18-eps-converted-to.pdf  used on input line 115.
+
+(pdftex.def)             Requested size: 289.07999pt x 235.8116pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--116
+[]
+ []
+
+[6 <./Lab04_09-eps-converted-to.pdf> <./Lab04_10-eps-converted-to.pdf>]
+[7 <./Lab04_11-eps-converted-to.pdf> <./Lab04_12-eps-converted-to.pdf>]
+[8 <./Lab04_13-eps-converted-to.pdf> <./Lab04_14-eps-converted-to.pdf>]
+[9 <./Lab04_15-eps-converted-to.pdf> <./Lab04_16-eps-converted-to.pdf>]
+[10 <./Lab04_17-eps-converted-to.pdf> <./Lab04_18-eps-converted-to.pdf>]
+[11] (Lab04.aux) ) 
+Here is how much of TeX's memory you used:
+ 1333 strings out of 479321
+ 21827 string characters out of 2864554
+ 306579 words of memory out of 3000000
+ 18816 multiletter control sequences out of 15000+600000
+ 404538 words of font info for 31 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,6n,74p,236b,151s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\hardy\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
+appen/ec/dpi600\tcrm1000.pk><D:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on Lab04.pdf (11 pages, 1047321 bytes).
+PDF statistics:
+ 217 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+

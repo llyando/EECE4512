@@ -62,7 +62,7 @@ heartRate = 60*(100/msPerBeat);
 
 formatSpec = '\n%s Heart Rate: %2.0f ';
 fprintf(formatSpec,labels(1,k),heartRate);
-
+snapnow
 
 k = 5;
 
@@ -88,6 +88,7 @@ heartRate = 60*(100/msPerBeat);
 formatSpec = '\n%s Heart Rate: %2.0f \n';
 fprintf(formatSpec,labels(1,k),heartRate);
 
+snapnow
 %% 01 Questions and Answers
 % Was there variability between the beats? Would you expect the interval 
 % between beats to be identical? Why or why not?
@@ -112,7 +113,16 @@ for k = 1:numOfFiles
    grid on;
    ax = gca;
    ax.XRuler.MinorTick = 'on';
-    
+    snapnow
+
+ismax = islocalmax(rawData(k).ecg,'MinProminence',65);
+maxIndices = find(ismax);
+msPerBeat = mean(diff(maxIndices));
+heartRate = 60*(100/msPerBeat);
+
+formatSpec = '\n65: %s Heart Rate: %2.0f';
+fprintf(formatSpec,labels(1,k),heartRate);
+
 end
 
 %% Experiment 02: Plot LowPass Filtered Data vs Time
@@ -138,7 +148,17 @@ for k = 1:numOfFiles
    grid on;
    ax = gca;
    ax.XRuler.MinorTick = 'on';
-    
+    snapnow
+
+
+ismax = islocalmax(rawData(k).ecg,'MinProminence',65);
+maxIndices = find(ismax);
+msPerBeat = mean(diff(maxIndices));
+heartRate = 60*(100/msPerBeat);
+
+formatSpec = '\n65: %s Heart Rate: %2.0f';
+fprintf(formatSpec,labels(1,k),heartRate);
+
 end
 
 %% 02 Questions and Answers
