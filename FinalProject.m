@@ -2,10 +2,10 @@ clc; clear;
 
 plotSpacing = 2;
 
-% Create labels for subplots
+% Create labels variable for subplots
 labels = [ ...
-"Five Minute Reading", ...
-"Thirty Second Reading"
+" ",...
+" ", ...
 ];
 
 % Data source folder
@@ -24,19 +24,23 @@ for k = 1:numOfFiles
     path(k) = string( ...
               strcat(dataFolder, fileNameList(k,:)) ...
               );
-
+    
     % Read in data
     [dataSet(k).data, dataSet(k).t, dataSet(k).header] = ...
         BITalinoFileReader(path(k));
+    
+    % Assign labels for subplots from filenames
+    labels(1,k) = fileNameList(k,:);
+    
 end
 
-% Extract raw data of sensor
+%% Extract raw data of sensor
 %
 
 figure(1)
 
 for k = 1:numOfFiles
-   rawData(k).acc = dataSet(k).data(:,6).';
+   rawData(k).acc = dataSet(k).data(:,6);
     
    % Plot rawData vs time in separate subplots
    subplot(numOfFiles,plotSpacing,k)
@@ -52,10 +56,11 @@ end
 
 sgtitle('Raw Data vs Time');
 
-figure(2)
+%% Plot w/ threshold value
+
+ACCgThresh = 0.2;
 
 for k = 1:numOfFiles
-   
    % These data points come from the LAB01/Data Calibration Recordings
    % files.
    CMin = 406;
@@ -74,18 +79,27 @@ for k = 1:numOfFiles
     T = 1/Fs;                              % Sampling period       
     L = length(dataSet(k).data);           % Length of signal
     f = Fs*(0:(L/2))/L;  
-   
-    Y = fft(ACCg);
-    Z = conj(Y);
-    X = abs(Y.*Z)/L;
-    freq = linspace(0,Fs,length(X));
      
-   subplot(numOfFiles,plotSpacing,k)
-   plot(dataSet(k).t,ACCg)
+% plot each on own figure for ease of use in report
+   figure(k+1)
+%    plot(dataSet(k).t,ACCg)
+   
+    x = dataSet(k).t;
+    y = ACCg;
+
+% Using a cutoff of y>=0.5
+    Cutoff = y;
+    Cutoff(y >= -ACCgThresh & y <= ACCgThresh) = NaN;  % Replace points above cutoff with NaNs; 
+
+
+    figure;
+    plot(x,y,'b',x, Cutoff, 'r');
    
    title(labels(1,k))
+   yline(ACCgThresh,'--r')
+   yline(-ACCgThresh,'--r')
    xlabel('Time in sec'); ylabel('g, (9.8 m/s^2)');
-   ylim([-3 3])
+   legend('ACC g normalised', '\pm 0.25 g threshold');
    
    grid on;
    ax = gca;
@@ -93,36 +107,4 @@ for k = 1:numOfFiles
 
 end
 
-sgtitle('ACC g normalised vs time')
 
-% Testing power spectra calculation.
-%
-
-figure(2)
-
-for k = 1:numOfFiles
-
-    Fs = dataSet(k).header.samplingrate;
-    L = length(dataSet(k).data);
-    rawTrend = detrend(rawData(k).acc);
-    Y = fft(rawTrend);
-    Z = conj(Y);
-    X = abs(Y.*Z)/L;
-    freq = linspace(0,Fs,length(X));
-    
-    subplot(numOfFiles,plotSpacing,k)
-    
-    plot(freq, X);
-    
-    title(labels(1,k))
-    xlabel('Hz'); ylabel('Power Spectra');
-    xlim([0 1])
-
-   grid on;
-   ax = gca;
-   ax.XRuler.MinorTick = 'on';
-    
-end
-
-   sgtitle('Power Spectra vs Freq.')
-   
