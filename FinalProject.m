@@ -60,7 +60,7 @@ sgtitle('Raw Data vs Time');
 
 ACCgThresh = 0.2;
 
-for k = 1:numOfFiles
+for k = 1:numOfFiles - 1
    % These data points come from the LAB01/Data Calibration Recordings
    % files.
    CMin = 406;
@@ -76,21 +76,20 @@ for k = 1:numOfFiles
    ACCg = ( (rawData(k).acc - CMin ) / (CMax - CMin) ) * 2 - 1;
    
     Fs = dataSet(k).header.samplingrate;   % Sampling frequency                    
-    T = 1/Fs;                              % Sampling period       
+    T = 1/Fs;                                      % Sampling period       
     L = length(dataSet(k).data);           % Length of signal
     f = Fs*(0:(L/2))/L;  
-     
+    
 % plot each on own figure for ease of use in report
-   figure(k+1)
+%   figure(k)
 %    plot(dataSet(k).t,ACCg)
    
     x = dataSet(k).t;
     y = ACCg;
 
-% Using a cutoff of y>=0.5
+% Using a cutoff of: -ACCgThresh <= y >= ACCgThresh
     Cutoff = y;
     Cutoff(y >= -ACCgThresh & y <= ACCgThresh) = NaN;  % Replace points above cutoff with NaNs; 
-
 
     figure;
     plot(x,y,'b',x, Cutoff, 'r');
@@ -99,12 +98,46 @@ for k = 1:numOfFiles
    yline(ACCgThresh,'--r')
    yline(-ACCgThresh,'--r')
    xlabel('Time in sec'); ylabel('g, (9.8 m/s^2)');
-   legend('ACC g normalised', '\pm 0.25 g threshold');
+   legend("ACC g normalised, ", "\pm " + ACCgThresh + " g threshold");
    
    grid on;
    ax = gca;
    ax.XRuler.MinorTick = 'on';
 
+   % 
+   Cutoff = y;
+   Cutoff(y >= -ACCgThresh & y <= ACCgThresh) = 0;
+   
+   [R, C]=find(Cutoff);
+   
 end
 
 
+% Plot converted data by itself for ease of plotting.
+
+    k = numOfFiles
+    x = dataSet(k).t;
+    y = rawData(k).acc;
+
+% Using a cutoff of: -ACCgThresh <= y >= ACCgThresh
+    Cutoff = y;
+    Cutoff(y >= -ACCgThresh & y <= ACCgThresh) = NaN;  % Replace points above cutoff with NaNs; 
+
+    figure;
+    plot(x,y,'b',x, Cutoff, 'r');
+   
+   title(labels(1,k))
+   yline(ACCgThresh,'--r')
+   yline(-ACCgThresh,'--r')
+   xlabel('Time in sec'); ylabel('g, (9.8 m/s^2)');
+   legend("ACC g normalised, ", "\pm " + ACCgThresh + " g threshold");
+   
+   grid on;
+   ax = gca;
+   ax.XRuler.MinorTick = 'on';
+
+   % 
+   Cutoff = y;
+   Cutoff(y >= -ACCgThresh & y <= ACCgThresh) = 0;
+   
+   [R, C]=find(Cutoff);
