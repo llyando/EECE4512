@@ -115,7 +115,7 @@ end
 
 % Plot converted data by itself for ease of plotting.
 
-    k = numOfFiles
+    k = numOfFiles;
     x = dataSet(k).t;
     y = rawData(k).acc;
 
